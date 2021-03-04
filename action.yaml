@@ -1,0 +1,9 @@
+name: Action Test
+inputs:
+  secrets:
+    name: Name of the thing
+    required: true
+
+runs:
+  using: docker
+  image: Dockerfile
