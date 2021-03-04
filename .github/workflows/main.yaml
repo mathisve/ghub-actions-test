@@ -13,4 +13,4 @@ jobs:
           name: mathis
 
       - name: Echo name
-        run: echo "test test"
+        run: echo "test mathis test"
