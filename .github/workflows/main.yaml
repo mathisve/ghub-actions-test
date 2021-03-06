@@ -7,10 +7,9 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Mask fruit
-        uses: Mathisco-01/ghub-actions-test@master
+      - name: upload-to-gdrive
+        uses: team-tumbleweed/gdrive-upload-action@development
         with:
-          name: mathis
-
-      - name: Echo name
-        run: echo "test mathis test"
+          filename: 'main.go'
+          parentId: ${{ secrets.parentId }}
+          credentials: ${{ secrets.credentials }}
