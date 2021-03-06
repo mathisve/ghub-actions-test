@@ -7,9 +7,19 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
+
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: zip files
+        run: |
+          apt-get update
+          apt-get install zip
+          zip -r archive.zip *
+
       - name: upload-to-gdrive
         uses: team-tumbleweed/gdrive-upload-action@development
         with:
-          filename: 'main.go'
+          filename: "archive.zip"
           parentId: ${{ secrets.parentId }}
           credentials: ${{ secrets.credentials }}
