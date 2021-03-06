@@ -13,8 +13,8 @@ jobs:
 
       - name: zip files
         run: |
-          apt-get update
-          apt-get install zip
+          sudo apt-get update
+          sudo apt-get install zip
           zip -r archive.zip *
 
       - name: upload-to-gdrive
