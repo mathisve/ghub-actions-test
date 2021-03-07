@@ -21,5 +21,5 @@ jobs:
         uses: team-tumbleweed/gdrive-upload-action@development
         with:
           filename: "archive.zip"
-          parentId: ${{ secrets.parentId }}
-          credentials: ${{ secrets.credentials }}
+          folderId: ${{ secrets.folderId }}
+          credentials: ${{ secrets.credentialsc }}
