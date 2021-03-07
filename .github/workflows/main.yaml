@@ -22,4 +22,4 @@ jobs:
         with:
           filename: "archive.zip"
           folderId: ${{ secrets.folderId }}
-          credentials: ${{ secrets.credentialsc }}
+          credentials: ${{ secrets.credentials }}
