@@ -21,5 +21,6 @@ jobs:
         uses: team-tumbleweed/gdrive-upload-action@development
         with:
           filename: "archive.zip"
+          name: "kekw.zip"
           folderId: ${{ secrets.folderId }}
           credentials: ${{ secrets.credentials }}
