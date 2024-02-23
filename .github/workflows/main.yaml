@@ -28,6 +28,7 @@ jobs:
       - name: output-test
         run: |
           echo "$GITHUB_OUTPUT"
+          cat "$GITHUB_OUTPUT"
           
   job2:
     runs-on: ubuntu-latest
