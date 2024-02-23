@@ -28,6 +28,7 @@ jobs:
       - name: output-test
         run: |
           echo "$GITHUB_OUTPUT"
+          wc -l $GITHUB_OUTPUT
           cat $GITHUB_OUTPUT
           echo "Hello ther!"
           
