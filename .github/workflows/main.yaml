@@ -24,6 +24,11 @@ jobs:
           name: "kekw2.zip"
           folderId: ${{ secrets.folderId }}
           credentials: ${{ secrets.credentials }}
+
+      - name: output-test
+        run: |
+          echo "$GITHUB_OUTPUT"
+          
   job2:
     runs-on: ubuntu-latest
     needs: job1
