@@ -5,6 +5,8 @@ on: [push]
 jobs:
   job1:
     runs-on: ubuntu-latest
+    outputs:
+      download-link: ${{ steps.upload-to-gdrive.outputs.download-link}}
     steps:
       - name: Checkout code
         uses: actions/checkout@v2
