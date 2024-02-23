@@ -33,5 +33,5 @@ jobs:
         env:
           OUTPUT1: ${{needs.job1.outputs.download-link}}
         run: |
-          echo $OUTPUT1
+          echo "$OUTPUT1"
       
