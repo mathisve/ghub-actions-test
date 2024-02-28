@@ -18,8 +18,8 @@ jobs:
           zip -r archive.zip *
 
       - name: upload
-        # uses: SyntyStudios/gdrive-upload-action@main
-        uses: mathisve/gdrive-upload-action@main
+        uses: SyntyStudios/gdrive-upload-action@main
+        # uses: mathisve/gdrive-upload-action@main
         with:
           filename: "archive.zip"
           name: "kekw2.zip"
