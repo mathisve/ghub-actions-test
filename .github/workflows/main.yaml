@@ -6,7 +6,7 @@ jobs:
   job1:
     runs-on: ubuntu-latest
     outputs:
-      DOWNLOAD_LINK: ${{ steps.upload.outputs.download-link }}
+      DOWNLOAD_LINK: ${{ steps.job1.outputs.download-link }}
     steps:
       - name: Checkout code
         uses: actions/checkout@v2
