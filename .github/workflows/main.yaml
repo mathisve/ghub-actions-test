@@ -6,7 +6,7 @@ jobs:
   job1:
     runs-on: ubuntu-latest
     outputs:
-      download-link: ${{ steps.upload-to-gdrive.outputs.download-link}}
+      DOWNLOAD_LINK: ${{ steps.upload.outputs.download-link }}
     steps:
       - name: Checkout code
         uses: actions/checkout@v2
@@ -17,31 +17,18 @@ jobs:
           sudo apt-get install zip
           zip -r archive.zip *
 
-      - name: upload-to-gdrive
+      - name: upload
         uses: SyntyStudios/gdrive-upload-action@main
         with:
           filename: "archive.zip"
           name: "kekw2.zip"
           folderId: ${{ secrets.folderId }}
           credentials: ${{ secrets.credentials }}
-
-      - name: output-test
-        run: |
-          echo "$GITHUB_OUTPUT"
-          wc -l $GITHUB_OUTPUT
-          cat $GITHUB_OUTPUT
-          echo "Hello ther!"
           
-  job2:
+  printing-download-link:
     runs-on: ubuntu-latest
     needs: job1
     steps:
-      - name: Checkout code
-        uses: actions/checkout@v2
-
-      - name: print output
-        env:
-          OUTPUT1: ${{needs.job1.outputs.download-link}}
+      - name: Printing download link to the console
         run: |
-          echo "$OUTPUT1"
-      
+          echo "The download link for the uploaded file is: ${{ needs.job1.outputs.DOWNLOAD_LINK }}
