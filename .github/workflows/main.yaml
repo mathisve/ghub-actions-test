@@ -31,4 +31,4 @@ jobs:
     steps:
       - name: Printing download link to the console
         run: |
-          echo "The download link for the uploaded file is: ${{ needs.job1.outputs.DOWNLOAD_LINK }}
+          echo "The download link for the uploaded file is: ${{ needs.job1.outputs.DOWNLOAD_LINK }}"
